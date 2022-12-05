@@ -24,16 +24,22 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
 print("Welcome to The Adventure Game!")
 print("Your mission is to find the treasure")
 
-first_level = input("You have arrived to a turn, do you want to go left or right?: ")
-second_level = input("You have made it to a body of water..Do you want to swim or wait?: ")
-third_level = input("You have made it to an island, do you want to dig or move?: ")
-
+first_level = input("You have arrived to a turn, do you want to go left or right?: ").lower()
 if first_level == "left":
+    second_level = input("You have made it to the next level! You have arrived at a body of water..Do you want to swim or wait?: ").lower()
     if second_level == "wait":
-        if third_level == "move":
+        third_level = input("You have made it to an island with three doors. Red, Blue, and Green.. Which door do you choose?: ").lower()
+        if third_level == "green":
             print("You have found the treasure!")
+        elif third_level == "blue":
+            print("You released the island monster and it devoured you! GAME OVER!!")
+        elif third_level == "red":
+            print("You entered a room full of poisnous snakes!! GAME OVER!!")
+    else:
+        print("GAME OVER!!")
 else:
-    print("GAME OVER!!")
+    print("You fell into a trap! GAME OVER!")
+
 
 
 
